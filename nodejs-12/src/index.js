@@ -29,10 +29,6 @@ function getShoppingCart(ids, productsList) {
 		return price;
 	});
 	const totalRegularPrice = reduceList(shoppingCart, 'regularPrice');
-	// const totalPrice = reduceList(promotionPrices);
-	// const discountValue = reduceList([totalRegularPrice, -totalPrice]);
-	// const discount = reduceList([discountValue/totalRegularPrice * 100]) + '%';
-	
 	const totals = {
 		totalPrice: reduceList(promotionPrices);
 		discountValue: reduceList([totalRegularPrice, -this.totalPrice]);
@@ -41,9 +37,6 @@ function getShoppingCart(ids, productsList) {
 	return {
 		products,
 		promotion,
-		// totalPrice,
-		// discountValue,
-		// discount
 		...totals
 	};
 }
